@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4"> Export </legend>
+        <form name="Item_1" action="{{ url_for('export') }}" method="POST">
+            <div class="form-group">
+                <select name="Item_1" class="form-control">
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                    <option value="Books">Books</option>
+                    <option value="Borrowed">Books Borrowed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="export" value="submitted">Submit!</button>
+            </div>
+        </form>
+    </fieldset>
+</div>
+
+<div>
+    <form method=post enctype=multipart/form-data class="form-control">
+        <legend class="border-bottom mb-4"> Import file </legend>
+        <p><font color="red">
+            <h3 style="color:red;">Format for importing the data</h1>
+            <h4>1.Always create a csv file without headers</h2>
+            <h4>2.For importing student details</h2>
+            <h5> 1st column student name</h3>
+            <h5> 2nd column student standard</h3>
+            <h5> 3rd column student unique id</h3>
+            <h4>3.For importing teacher details</h2> 
+            <h5> 1st column teacher name</h3>
+            <h5> 2nd column teacher unique id</h3>
+            <h4>4.For importing books details</h2> 
+            <h5> 1st column book name</h3>
+            <h5> 2nd column book unique id</h3>
+            <h3 style="color:red;">Always maintain unique id</h1>        
+        </font></p>
+        <div class="form-group">
+            <select name="Item_2" class="form-control">
+                <option value="Student">Student</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Books">Books</option>
+                <option value="Update">Update Books</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input type=file name=file class="form-group">
+        </div>
+        <div class="form-group">
+            <button type="submit" name="import" value=Upload>Import!</button>
+        </div>
+
+    </form>
+</div>
+{% endblock content %}

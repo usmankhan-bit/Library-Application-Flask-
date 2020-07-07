@@ -1,0 +1,86 @@
+body {
+    color: green;
+    font-family: Verdana, Arial, Geneva, Arial Black;
+    font-weight: lighter;
+    font-size: 25px;
+    background-color: #c6d166;
+    
+}
+h1,h2 {
+    border-bottom: 1px solid black;
+    font-size: 150%;
+    text-align: center
+}
+#para1homepage {
+    color: blue;
+    
+    
+}
+
+p.paragraph{
+    color:red;
+    font-size: 15px;
+    font-style:oblique;
+    background-color: #e5e4d7;
+    padding: 20px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    background-image: url(rose.jpg);
+    border-radius: 5px;
+    border-bottom-style: dotted
+    
+}
+
+#para4homepage{
+    color:black;
+    font-size: 15px;
+    font-style:oblique;
+    background-color: #e5e4d7;
+    padding: 20px;
+    border-color: #296a64;
+    border-width: thick;
+    border-style: ridge;
+    margin: 20px;
+    margin-top: 50px;
+    margin-right: 450px;
+    padding-left: 40px;
+    height: 120px;
+    overflow: scroll;
+}
+
+.underline{
+    text-decoration: overline,underline;
+}
+
+img.image{
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 3px;
+    background-color: silver;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#divmain{
+    color: black;
+}
+#divbass{
+    color: blanchedalmond
+}
+
+.highlight{
+    background-color: yellow
+}
+a:link{
+    color: blue;
+}
+a:visited{
+    color: #8c8c9d;
+}
+a:hover{
+    color: #f15a51;
+}

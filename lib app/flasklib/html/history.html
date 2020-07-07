@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4"> Get History by date </legend>
+            <div class="form-group">
+                {{ form.year.label(class="form-control-label") }}
+                <!-- <input type="date"> -->
+                {% if form.year.errors %}
+                {{ form.date_given(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.year.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form.year(class="form-control form-control-lg") }}
+                {% endif %}
+
+            </div>
+            <div class="form-group">
+                <select name="Item_1" class="form-control">
+                    <option value="Student">Student</option>
+                    <option value="Teacher">Teacher</option>
+                </select>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+
+
+<div class="content-section">
+    <form method="POST" action="">
+        {{ form2.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Get history by student id </legend>
+            <div class="form-group">
+                {{ form2.fsid.label(class="form-control-label") }}
+                {% if form2.fsid.errors %}
+                {{ form2.fsid(class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form2.fsid.errors %}
+                    <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% else %}
+                {{ form2.fsid(class="form-control form-control-lg") }}
+                {% endif %}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form2.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

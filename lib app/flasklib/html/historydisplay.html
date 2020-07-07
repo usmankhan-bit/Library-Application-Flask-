@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<head>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <table>
+        <a>
+            <font color="red">
+                Data with respect to date given
+            </font>
+        </a>
+        <tr>
+            <th>Student Id</th>
+            <th>Book Id</th>
+            <th>Classification</th>
+            <th>Book name</th>
+            <th>Date borrowed</th>
+            <th>Date returned</th>
+            <th>Penalty paid</th>
+        </tr>
+        {% for post in posts %}
+        <tr>
+            <td>{{ post.sid }}</td>
+            <td>{{ post.bid }}</td>
+            <td>{{ post.book.classno }}</td>
+            <td>{{ post.book.bname }}</td>
+            <td>{{ post.date_given.date() }}</td>
+            <td>{{ post.date_returned.date() }}</td>
+            <td>{{ post.penalty }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- <div>
+        <table>
+            <a>
+                <font color="red">
+                    Data with respect to date returned
+                </font>
+            </a>
+            <tr>
+                <th>Student Id</th>
+                <th>Book Id</th>
+                <th>Book name</th>
+                <th>Date borrowed</th>
+                <th>Date returned</th>
+                <th>Penalty paid</th>
+            </tr>
+            {% for post in posts2 %}
+            <tr>
+                <td>{{ post.sid }}</td>
+                <td>{{ post.bid }}</td>
+                <td>{{ post.book.bname }}</td>
+                <td>{{ post.date_given.date() }}</td>
+                <td>{{ post.date_returned.date() }}</td>
+                <td>{{ post.penalty}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div> -->
+
+</body>
+{% endblock content %}
